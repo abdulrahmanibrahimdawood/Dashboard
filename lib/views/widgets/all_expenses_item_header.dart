@@ -15,7 +15,7 @@ class AllExpensesItemHeader extends StatelessWidget {
           decoration: ShapeDecoration(color: Colors.white, shape: OvalBorder()),
           child: SvgPicture.asset(image),
         ),
-        Spacer(),
+        Expanded(child: SizedBox()),
         Transform.rotate(
           angle: -1.57079633 * 2,
           child: Icon(
