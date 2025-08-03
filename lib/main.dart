@@ -10,6 +10,9 @@ class ResponsiveDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: DashboardView());
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: DashboardView(),
+    );
   }
 }
