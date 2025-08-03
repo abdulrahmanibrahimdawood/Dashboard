@@ -20,22 +20,20 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
     ),
     DrawerItemModel(title: 'Statistics', image: Assets.imagesStatistics),
     DrawerItemModel(title: 'Wallet Account', image: Assets.imagesWallet),
-    DrawerItemModel(title: 'Logout', image: Assets.imagesLogout),
+    DrawerItemModel(title: 'My Investments', image: Assets.imagesMyInvestments),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return SliverList.builder(
       itemCount: items.length,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
+
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
             if (activeIndex != index) {
               setState(() {
                 activeIndex = index;
-                print(activeIndex);
               });
             }
           },
