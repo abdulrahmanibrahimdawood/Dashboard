@@ -1,4 +1,5 @@
 import 'package:dash_board/utils/app_images.dart';
+import 'package:dash_board/views/widgets/drawer_items_list_view.dart';
 import 'package:dash_board/views/widgets/user_info_list_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class CustomDrawer extends StatelessWidget {
             title: 'Lekan Okeowo',
             subtitle: 'demo@gmail.com',
           ),
+          DrawerItemsListView(),
         ],
       ),
     );
