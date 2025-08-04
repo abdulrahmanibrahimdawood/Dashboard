@@ -3,10 +3,16 @@ import 'package:dash_board/utils/app_images.dart';
 import 'package:dash_board/views/widgets/all_expenses_item.dart';
 import 'package:flutter/material.dart';
 
-class AllExpensesItemListView extends StatelessWidget {
+class AllExpensesItemListView extends StatefulWidget {
   const AllExpensesItemListView({super.key});
 
-  static const List<AllExpensesItemModel> items = [
+  @override
+  State<AllExpensesItemListView> createState() =>
+      _AllExpensesItemListViewState();
+}
+
+class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
+  final List<AllExpensesItemModel> items = [
     AllExpensesItemModel(
       title: 'Balance',
       date: 'April 2022',
@@ -26,7 +32,7 @@ class AllExpensesItemListView extends StatelessWidget {
       image: Assets.imagesExpences,
     ),
   ];
-
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -41,15 +47,39 @@ class AllExpensesItemListView extends StatelessWidget {
 
         if (index == 1) {
           return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpensesItem(itemModel: item),
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: AllExpensesItem(
+                  itemModel: item,
+                  isSelected: selectedIndex == index,
+                ),
+              ),
             ),
           );
         } else {
-          return Expanded(child: AllExpensesItem(itemModel: item));
+          return Expanded(
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: AllExpensesItem(
+                itemModel: item,
+                isSelected: selectedIndex == index,
+              ),
+            ),
+          );
         }
       }).toList(),
     );
+  }
+
+  void updateIndex(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
   }
 }
