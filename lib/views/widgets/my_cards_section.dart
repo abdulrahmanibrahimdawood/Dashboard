@@ -14,7 +14,8 @@ class _MyCardsSectionState extends State<MyCardsSection> {
   late PageController pageController;
   int currentPageIndex = 0;
 
-  void initstate() {
+  @override
+  void initState() {
     pageController = PageController();
     pageController.addListener(() {
       currentPageIndex = pageController.page!.round();
