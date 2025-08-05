@@ -18,9 +18,9 @@ class Assets {
   /// assets/images/balance.svg
   static const String imagesBalance = "assets/images/balance.svg";
 
-  /// Assets for imagesCardBackground
-  /// assets/images/card_background.svg
-  static const String imagesCardBackground = "assets/images/card_background.svg";
+  /// Assets for imagesCardBackGround
+  /// assets/images/card_back_ground.png
+  static const String imagesCardBackGround = "assets/images/card_back_ground.png";
 
   /// Assets for imagesDashboard
   /// assets/images/dashboard.svg
@@ -30,9 +30,9 @@ class Assets {
   /// assets/images/expences.svg
   static const String imagesExpences = "assets/images/expences.svg";
 
-  /// Assets for imagesFontsMontserratVariableFontWght
-  /// assets/images/fonts/Montserrat-VariableFont_wght.ttf
-  static const String imagesFontsMontserratVariableFontWght = "assets/images/fonts/Montserrat-VariableFont_wght.ttf";
+  /// Assets for imagesGallery
+  /// assets/images/gallery.svg
+  static const String imagesGallery = "assets/images/gallery.svg";
 
   /// Assets for imagesIncome
   /// assets/images/income.svg
