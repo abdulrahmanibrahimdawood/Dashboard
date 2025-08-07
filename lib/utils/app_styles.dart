@@ -1,3 +1,4 @@
+import 'package:dash_board/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppStyles {
@@ -105,23 +106,18 @@ double getResponsiveFontSize(context, {required double fontSize}) {
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
 }
 
-//delete
 double getScaleFactor(context) {
-  return 1;
+  //   // var dispatcher = PlatformDispatcher.instance;
+  //   // var physicalWidth = dispatcher.views.first.physicalSize.width;
+  //   // var devicePixelRatio = dispatcher.views.first.devicePixelRatio;
+  //   // double width = physicalWidth / devicePixelRatio;
+
+  double width = MediaQuery.sizeOf(context).width;
+  if (width < SizeConfig.tablet) {
+    return width / 550;
+  } else if (width < SizeConfig.desktop) {
+    return width / 1000;
+  } else {
+    return width / 1920;
+  }
 }
-
-// double getScaleFactor(context) {
-//   // var dispatcher = PlatformDispatcher.instance;
-//   // var physicalWidth = dispatcher.views.first.physicalSize.width;
-//   // var devicePixelRatio = dispatcher.views.first.devicePixelRatio;
-//   // double width = physicalWidth / devicePixelRatio;
-
-//   double width = MediaQuery.sizeOf(context).width;
-//   if (width < SizeConfig.tablet) {
-//     return width / 550;
-//   } else if (width < SizeConfig.desktop) {
-//     return width / 1000;
-//   } else {
-//     return width / 1920;
-//   }
-// }
