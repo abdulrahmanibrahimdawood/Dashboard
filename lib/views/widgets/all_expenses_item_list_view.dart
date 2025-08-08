@@ -41,39 +41,44 @@ class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
       //     .map((e) => Expanded(child: AllExpensesItem(itemModel: e)))
       //     .toList(),
       //=====================================================================================================
-      children: items.asMap().entries.map((e) {
-        int index = e.key;
-        var item = e.value;
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(0);
+            },
+            child: AllExpensesItem(
+              itemModel: items[0],
+              isSelected: selectedIndex == 0,
+            ),
+          ),
+        ),
+        SizedBox(width: 8),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(1);
+            },
+            child: AllExpensesItem(
+              itemModel: items[1],
+              isSelected: selectedIndex == 1,
+            ),
+          ),
+        ),
+        SizedBox(width: 8),
 
-        if (index == 1) {
-          return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                updateIndex(index);
-              },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: AllExpensesItem(
-                  itemModel: item,
-                  isSelected: selectedIndex == index,
-                ),
-              ),
+        Expanded(
+          child: GestureDetector(
+            onTap: () {
+              updateIndex(2);
+            },
+            child: AllExpensesItem(
+              itemModel: items[2],
+              isSelected: selectedIndex == 2,
             ),
-          );
-        } else {
-          return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                updateIndex(index);
-              },
-              child: AllExpensesItem(
-                itemModel: item,
-                isSelected: selectedIndex == index,
-              ),
-            ),
-          );
-        }
-      }).toList(),
+          ),
+        ),
+      ],
     );
   }
 
